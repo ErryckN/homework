@@ -71,6 +71,13 @@ function App() {
       {!error && tracks.length > 0 && <PlaylistContainer tracks={tracks} />}
       {!error && tracks.length === 0 && <p>No tracks found</p>}
       {error && <p>{error}</p>}
+      <button
+          onClick={() => onSelectTrack(track)}
+          type="button"
+          className="playlist-action"
+        >
+          {isSelected ? 'Deselect' : 'Select'}
+        </button>
     </div>
   );
 }
