@@ -1,6 +1,7 @@
 //import Music from './components/music';
 import Table from './components/Table';
 //import list from './data/data.js';
+import PlaylistForm from './data/playlist';
 
 function App() {
   const [tracks, setTracks] = useState([]);
@@ -41,6 +42,7 @@ function App() {
     const query = event.target[0].value;
     await geTracks(query);
   };
+  
 
   return (
     <div className="app">
@@ -79,6 +81,7 @@ function App() {
           {isSelected ? 'Deselect' : 'Select'}
         </button>
     </div>
+    
   );
 }
 
