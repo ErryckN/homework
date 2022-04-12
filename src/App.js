@@ -1,7 +1,8 @@
-//import Music from './components/music';
-import Table from './components/Table';
-//import list from './data/data.js';
+// import Music from './components/music';
+// import Table from './components/Table';
+// import list from './data/data.js';
 import PlaylistForm from './data/playlist';
+import './App.css';
 
 function App() {
   const [tracks, setTracks] = useState([]);
@@ -42,7 +43,6 @@ function App() {
     const query = event.target[0].value;
     await geTracks(query);
   };
-  
 
   return (
     <div className="app">
@@ -74,14 +74,14 @@ function App() {
       {!error && tracks.length === 0 && <p>No tracks found</p>}
       {error && <p>{error}</p>}
       <button
-          onClick={() => onSelectTrack(track)}
-          type="button"
-          className="playlist-action"
-        >
-          {isSelected ? 'Deselect' : 'Select'}
-        </button>
+        onClick={() => onSelectTrack(track)}
+        type="button"
+        className="playlist-action"
+      >
+        {isSelected ? 'Deselect' : 'Select'}
+      </button>
     </div>
-    
+
   );
 }
 
